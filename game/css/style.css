@@ -1,0 +1,137 @@
+/* Twin Tides — warm storybook styling for the game frame. */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1d2b4d;
+  color: #f4ead2;
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+}
+
+#app { max-width: 1220px; margin: 0 auto; padding: 10px 16px 24px; }
+
+header { text-align: center; margin-bottom: 6px; }
+header h1 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: 4px;
+  color: #ffd94d;
+  text-shadow: 0 2px 0 #7a4a12;
+}
+header .tagline { margin: 2px 0 0; color: #cfe0f5; font-style: italic; }
+
+#hud {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #2b3a5e;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#hud-level { min-width: 210px; }
+#timer {
+  flex: 1;
+  height: 20px;
+  background: #16233f;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+#timer-fill {
+  height: 100%;
+  width: 100%;
+  background: #7bc47f;
+  border-radius: 10px;
+  transition: width 0.2s linear;
+}
+#timer-fill.low { background: #ff5d5d; animation: blink 0.6s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0.55; } }
+#timer-text {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  line-height: 20px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 0 1px 2px #000;
+}
+#hud-left { color: #ffd94d; min-width: 64px; text-align: center; }
+#hud-hearts { color: #ff8fab; letter-spacing: 2px; }
+#hud-hints { color: #7fb3e8; }
+
+#panels { display: flex; gap: 14px; justify-content: center; }
+#panels figure { margin: 0; }
+#panels canvas {
+  display: block;
+  width: 560px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid #f4ead2;
+  cursor: crosshair;
+  background: #22304f;
+}
+#panels figcaption {
+  text-align: center;
+  margin-top: 6px;
+  color: #cfe0f5;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+#controls { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
+button {
+  background: #ffd94d;
+  color: #3a2a12;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font: bold 15px "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+button:hover { background: #ffe27a; }
+button:disabled { background: #6b6f7d; color: #c9c9c9; cursor: default; }
+button.big { font-size: 18px; padding: 12px 26px; }
+#btn-sound { background: #7fb3e8; color: #16233f; }
+
+#toast {
+  min-height: 24px;
+  text-align: center;
+  font-style: italic;
+  color: #ffd94d;
+  opacity: 0;
+  transition: opacity 0.25s;
+  margin: 8px 0 0;
+}
+#toast.show { opacity: 1; }
+#level-line { text-align: center; color: #cfe0f5; margin: 4px 0 0; }
+
+#screen-menu .card, #screen-end .card {
+  background: #2b3a5e;
+  border-radius: 14px;
+  padding: 26px 32px;
+  max-width: 640px;
+  margin: 18px auto;
+  text-align: center;
+  border: 2px solid #ffd94d55;
+}
+#screen-menu h2, #screen-end h2 { color: #ffd94d; margin: 0 0 8px; }
+#screen-menu ul { text-align: left; display: inline-block; margin: 10px 0 18px; line-height: 1.7; }
+#menu-levels { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.level-pick {
+  background: #3d5a80;
+  color: #f4ead2;
+  text-align: left;
+  padding: 10px 14px;
+}
+.level-pick b { display: block; font-size: 16px; }
+.level-pick span { font-size: 13px; color: #cfe0f5; font-weight: normal; }
+.keys { color: #9fb3d1; font-size: 13px; margin-top: 14px; }
+#end-stars { font-size: 34px; color: #ffd94d; letter-spacing: 6px; margin: 8px 0; }
+#end-score { font-size: 20px; font-weight: bold; }
+.row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+#btn-retry, #btn-again { background: #3d5a80; color: #f4ead2; }

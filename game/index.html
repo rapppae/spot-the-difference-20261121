@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Tides — Spot the Difference</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Twin Tides</h1>
+    <p class="tagline">A spot-the-difference hunt in a seaside town</p>
+  </header>
+
+  <section id="screen-play">
+    <div id="hud">
+      <span id="hud-level">Level 1/4</span>
+      <div id="timer"><div id="timer-fill"></div><span id="timer-text">90s</span></div>
+      <span id="hud-left">5 left</span>
+      <span id="hud-score">Score 0</span>
+      <span id="hud-hearts">♥♥♥</span>
+      <span id="hud-hints">Hints 3</span>
+    </div>
+    <div id="panels">
+      <figure>
+        <canvas id="left" width="560" height="420"></canvas>
+        <figcaption>Picture A</figcaption>
+      </figure>
+      <figure>
+        <canvas id="right" width="560" height="420"></canvas>
+        <figcaption>Picture B</figcaption>
+      </figure>
+    </div>
+    <div id="controls">
+      <button id="btn-hint">Hint (H)</button>
+      <button id="btn-restart">Restart (R)</button>
+      <button id="btn-menu">Menu (Esc)</button>
+      <button id="btn-sound">Sound: On (M)</button>
+    </div>
+    <p id="toast" aria-live="polite"></p>
+    <p id="level-line"><b id="level-name">Level 1 — Harbor Dawn</b> · <span id="level-sub"></span></p>
+  </section>
+
+  <section id="screen-menu">
+    <div class="card">
+      <h2>Find every difference</h2>
+      <p>Two pictures sit side by side. They look the same — but a few small
+      things changed. Click a difference on either picture to circle it.</p>
+      <ul>
+        <li>Find them all before the timer runs out.</li>
+        <li>Wrong clicks cost a heart — three hearts and the level ends.</li>
+        <li>Finds in a row build a combo worth extra points.</li>
+        <li>Stuck? A hint rings one difference you missed (3 per level).</li>
+      </ul>
+      <div id="menu-levels"></div>
+      <button id="menu-start" class="big">Start Level 1</button>
+      <p class="keys">Mouse to click · H hint · R restart · M sound · Esc menu · 1–4 pick a level</p>
+    </div>
+  </section>
+
+  <section id="screen-end" hidden>
+    <div class="card">
+      <h2 id="end-title">Level Clear!</h2>
+      <p id="end-sub"></p>
+      <p id="end-stars">★★★</p>
+      <p id="end-score">Score: 0</p>
+      <div class="row">
+        <button id="btn-next" class="big">Next Level →</button>
+        <button id="btn-retry">Replay Level</button>
+        <button id="btn-again">Play Again</button>
+      </div>
+      <p class="keys">Enter continues · R replays the level</p>
+    </div>
+  </section>
+</div>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
